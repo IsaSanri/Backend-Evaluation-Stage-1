@@ -1,0 +1,28 @@
+using System;
+using System.Text.RegularExpressions;
+
+namespace EvaluationStage1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Escriba aqui su cadena de caracteres: ");
+            string text=Console.ReadLine();
+            CheckSpecialCharacters(text);
+        }
+        public static void CheckSpecialCharacters(string text)
+        {
+            text = Regex.Replace(text, @"[\W\''\s]", string.Empty);
+
+            if (text == string.Empty)
+            {
+                Console.WriteLine("NA");
+            }
+            else
+            {
+                Console.WriteLine(text);
+            }
+        }
+    }
+}
